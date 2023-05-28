@@ -1,0 +1,4 @@
+Il n'y a qu'une seule sauvegarde de disponible.
+Les différents personnages peuvent avoir des capacités 
+différentes, testez-les ! 
+Après chaque choix, il faut entrer A ou B.

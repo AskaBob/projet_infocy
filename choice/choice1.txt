@@ -1,0 +1,3 @@
+Commençons cette aventure avec un exemple de choix simple ! 
+Celui-ci te mène à l'étape 2.
+Souhaites-tu être un héros ou une personne lambda ?
