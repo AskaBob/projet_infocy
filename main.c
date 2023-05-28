@@ -15,7 +15,7 @@ int main() {
         char nameFI[] = "chara/swordw.txt";
     }
     else{
-        char nameFI[] = "chara/staffw.txt";
+        char nameFIM[] = "chara/slime.txt";
     }
 
     InitCharacter(nameFI, &inventory);
@@ -30,6 +30,28 @@ int main() {
     else if(MakeChoice() == 1){
         ReadText("description/begintrip.txt");
         Fight(&monster, &inventory);
+        ReadText("description/congrast1.txt");
+        ReadText("description/kidnapping.txt");
+        ReadText("choice/choice2.txt");
+        if(MakeChoice() == 0){
+            ReadText("description/cave.txt");
+            char nameFI[] = "chara/swordf.txt";
+            char nameFIM[] = "chara/gipsy.txt";
+    
+            InitCharacter(nameFI, &inventory);
+            InitMonster(nameFIM, &monster);
+            Fight(&monster, &inventory);
+            ReadText("description/meetdwarf.txt");
+            ReadText("choice/choice3b.txt");
+            if(MakeChoice() == 0){
+                ReadText("description/staycave.txt");
+                printf("FIN 'Forgeron'");
+            }
+            else if(MakeChoice() == 1){
+                ReadText("description/goback.txt");
+                
+            } 
+        }
     }
     
 
