@@ -27,7 +27,7 @@ int main() {
         ReadText("description/peacefullife.txt");
         printf("FIN 'Vie paisible'");
     }
-    else if(MakeChoice() == 1){
+    else{
         ReadText("description/begintrip.txt");
         Fight(&monster, &inventory);
         ReadText("description/congrast1.txt");
@@ -47,20 +47,72 @@ int main() {
                 ReadText("description/staycave.txt");
                 printf("FIN 'Forgeron'");
             }
-            else if(MakeChoice() == 1){
+            else {
                 ReadText("description/goback.txt");
-                
-            } 
+                char nameFI[] = "chara/swordg.txt";
+                char nameFIM[] = "chara/demoninf.txt";
+                InitCharacter(nameFI, &inventory);
+                InitMonster(nameFIM, &monster);
+                Fight(&monster, &inventory);
+                ReadText("choice/choice4.txt");
+                if (MakeChoice() == 0){
+                    ReadText("description/fightb.txt");
+                    printf("FIN 'veritable heros'");
+                } else {
+                    ReadText("description/runb.txt");
+                    ReadText("choice/choice5.txt");
+                    if (MakeChoice() == 0){
+                        ReadText("description/victoryb.txt");
+                        printf("FIN 'Happy End'");
+                    }else {
+                        ReadText("description/deathb.txt");
+                        printf("FIN 'Hardcore'");
+                    }
+                }
+            }
+                    
+        }else {
+            ReadText("description/forest.txt");
+            char nameFI[] = "chara/swordf.txt";
+            char nameFIM[] = "chara/loup.txt";
+            InitCharacter(nameFI, &inventory);
+            InitMonster(nameFIM, &monster);
+            Fight(&monster, &inventory);
+            ReadText("description/meetelf.txt");
+            ReadText("choice/choice3a.txt");
+            if(MakeChoice() == 0){
+                ReadText("description/stayforest.txt");
+                printf("FIN 'No comment'");
+            }else {
+                ReadText("description/yearsa.txt");
+                char nameFI[] = "chara/swordg.txt";
+                char nameFIM[] = "chara/demonsup.txt";
+                InitCharacter(nameFI, &inventory);
+                InitMonster(nameFIM, &monster);
+                Fight(&monster, &inventory);
+                ReadText("choice/choice4.txt");
+                if (MakeChoice() == 0){
+                    ReadText("description/fighta.txt");
+                    ReadText("choice/choice6.txt");
+                    if (MakeChoice() == 1){
+                        ReadText("description/wedding.txt");
+                        printf("FIN 'Mariage'");
+                    }else {
+                        printf("FIN 'Veritable amis'");
+                    }
+                }else{
+                    ReadText("description/runa.txt");
+                    ReadText("choice/choice5.txt");
+                    if (MakeChoice() == 0){
+                        ReadText("description/victorya.txt");
+                        printf ("FIN 'Happy End'");
+                    }else {
+                        ReadText("description/deatha.txt");
+                        printf ("FIN 'Hardcore'");
+                    }
+                }
+            }
         }
     }
-    
-
-    printf("Nom du monstre : %s\n", monster.name);
-    printf("Points de vie du monstre : %d\n", monster.life);
-    printf("Degats du monstre : %d\n", monster.damage);
-    printf("\n");
-
-    Fight(&monster, &inventory);
-
     return 0;
 }
